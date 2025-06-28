@@ -70,11 +70,11 @@ export function checkCollisions(
       }
       
       result.obstacle = obstacle;
-      break;
+      return result; // Prioritize obstacle collision
     }
   }
 
-  // Check collectible collisions
+  // Check collectible collisions (only if no obstacle collision)
   for (const collectible of collectibles) {
     if (collectible.collected) continue;
 
